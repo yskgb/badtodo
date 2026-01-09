@@ -1,0 +1,11 @@
+name: Example workflow using Semgrep
+on: push
+jobs:
+  security:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run Semgrep to check code
+        uses: semgrep/semgrep-action@v1
+        with:
+          config: auto
